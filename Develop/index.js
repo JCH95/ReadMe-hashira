@@ -5,7 +5,73 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 // const { writeFile, copyFile } = require('./utils/generate-readme.js');
 
 // Creates an array of questions for user input
-const promptUser = () => {   
+// List of user questions
+const promptUser = () => {
+    console.log(`
+===================
+Contact / Questions
+===================
+`);
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: 'Please enter your GitHub username: (Required)',
+            name: 'github',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your GitHub username.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: 'Please enter your email address: (Required)',
+            name: 'email',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your email address.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: "Please enter the link to your project's repository: (Required)",
+            name: 'link',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter the link to your project repository.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: 'Add any additional questions about the project here:',
+            name: 'questions'
+        }
+    ]);
+};
+
+const promptReadme = data => {
+    console.log(`
+================
+Add a New ReadMe
+================
+`);
+
+    // Array to contain multiple ReadMe files, if none exist, create one
+    if (!data.projects) {
+        data.projects = [];
+    }
+    // ReadME questions for project
     return inquirer.prompt([
         {
             type: 'input',
@@ -91,64 +157,24 @@ const promptUser = () => {
             type: 'checkbox',
             message: 'What licenses are involved with this project?',
             choices: ['Choice 1', 'Choice 2', 'Choice 3', 'Choice 4', 'N/A']
+        },
+        {
+            type: 'confirm',
+            message: 'Would you like to create another ReadMe file?',
+            name: 'confirmReadme',
+            default: false
         }
-    ]);
+    ])
+    .then(data => {
+        data.projects.push(data);
+        if (data.confirmAddProject) {
+            return promptReadme(data);
+        } else {
+            return data;
+        }
+    });
 };
 
-// List of optional questions
-const contactPrompt = () => {
-    console.log(`
-===================
-Contact / Questions
-===================
-`);
-    return inquirer.prompt([
-        {
-            type: 'input',
-            message: 'Please enter your GitHub username: (Required)',
-            name: 'github',
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log('Please enter your GitHub username.');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
-            message: 'Please enter your email address: (Required)',
-            name: 'email',
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log('Please enter your email address.');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
-            message: "Please enter the link to your project's repository: (Required)",
-            name: 'link',
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log('Please enter the link to your project repository.');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
-            message: 'Add any additional questions about the project here:',
-            name: 'questions'
-        }
-    ]);
-};
 // Create a function to write README file
 const writeFile = fileContent => {
     return new Promise((resolve, reject) => {
@@ -174,7 +200,7 @@ const writeFile = fileContent => {
 // Function call to initialize app
 // init();
 promptUser()
-    .then(contactPrompt)
+    .then(promptReadme)
     .then(data => {
         return generateMarkdown(data);
     })
