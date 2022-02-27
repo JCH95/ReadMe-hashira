@@ -90,7 +90,7 @@ const promptUser = () => {
         {
             type: 'checkbox',
             message: 'What licenses are involved with this project?',
-            choices: ['Choice 1', 'Choice 2', 'Choice 3', 'Choice 4']
+            choices: ['Choice 1', 'Choice 2', 'Choice 3', 'Choice 4', 'N/A']
         }
     ]);
 };
@@ -151,14 +151,15 @@ Contact / Questions
 };
 // Create a function to write README file
 const writeFile = fileContent => {
-    return new Promise((resolve, rejectt) => {
-        fs.writeFile('./dist/ReadME.md', fileContent, err => {
-            // If Error, reject Promise and sent error info to catch method
+    return new Promise((resolve, reject) => {
+        fs.writeFile(`./${fileName.toLowerCase.split(' ').join('')}.md`, data, err => {
+            // If Error, reject Promise and sent error info to .catch method
             if (err) {
-                rejectt(err);
+                reject(err);
+                // Return to make sure the Promise doesn't run resolve function
                 return
             }
-            // Resolve if everything worked and send data to then method
+            // Resolve if everything worked and send data to .then method
             resolve({
                 ok: true,
                 message: 'ReadME file created!'
@@ -174,6 +175,9 @@ const writeFile = fileContent => {
 // init();
 promptUser()
     .then(contactPrompt)
+    .then(data => {
+        return generateMarkdown(data);
+    })
     // .then(writeFileResponse => {
     //     console.log(writeFileResponse);
     //     return copyFile();
