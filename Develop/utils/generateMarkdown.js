@@ -47,8 +47,9 @@ function generateMarkdown(data) {
   ${data.license}
 
   ### Contact Info / Questions
-  ${data.github}
-  ${data.email}
+  GitHub: ${data.github}
+  Email: ${data.email}
+  GitHub Project Link: ${data.link}
 
   ${data.questions}
   `;

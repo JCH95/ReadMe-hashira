@@ -131,6 +131,19 @@ Contact / Questions
         },
         {
             type: 'input',
+            message: "Please enter the link to your project's repository: (Required)",
+            name: 'link',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter the link to your project repository.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
             message: 'Add any additional questions about the project here:',
             name: 'questions'
         }
