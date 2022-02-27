@@ -1,8 +1,10 @@
 // Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
+// const { writeFile, copyFile } = require('./utils/generate-readme.js');
 
-// TODO: Create an array of questions for user input
+// Creates an array of questions for user input
 const promptUser = () => {   
     return inquirer.prompt([
         {
@@ -69,18 +71,7 @@ const promptUser = () => {
                     return false;
                 }
             }
-        }
-    ]);
-};
-
-// List of optional questions
-const optionalPrompt = () => {
-    console.log(`
-===================
-Optional Questions
-===================
-`);
-    return inquirer.prompt([
+        },
         {
             type: 'input',
             message: 'Enter any outstanding features of your project here:',
@@ -95,6 +86,53 @@ Optional Questions
             type: 'input',
             message: 'If you wrote tests for your project, provide the examples on how to run them here:',
             name: 'tests'
+        },
+        {
+            type: 'checkbox',
+            message: 'What licenses are involved with this project?',
+            choices: ['Choice 1', 'Choice 2', 'Choice 3', 'Choice 4']
+        }
+    ]);
+};
+
+// List of optional questions
+const contactPrompt = () => {
+    console.log(`
+===================
+Contact / Questions
+===================
+`);
+    return inquirer.prompt([
+        {
+            type: 'input',
+            message: 'Please enter your GitHub username: (Required)',
+            name: 'github',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your GitHub username.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: 'Please enter your email address: (Required)',
+            name: 'email',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your email address.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            message: 'Add any additional questions about the project here:',
+            name: 'questions'
         }
     ]);
 };
@@ -122,7 +160,7 @@ const writeFile = fileContent => {
 // Function call to initialize app
 // init();
 promptUser()
-    .then(optionalPrompt)
+    .then(contactPrompt)
     // .then(writeFileResponse => {
     //     console.log(writeFileResponse);
     //     return copyFile();
@@ -133,3 +171,4 @@ promptUser()
     // .catch(err => {
     //     console.log(err);
     // });
+
