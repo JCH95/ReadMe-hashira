@@ -15,8 +15,8 @@ Contact / Questions
     return inquirer.prompt([
         {
             type: 'input',
-            message: 'Please enter your GitHub username: (Required)',
             name: 'github',
+            message: 'Please enter your GitHub username: (Required)',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -28,8 +28,8 @@ Contact / Questions
         },
         {
             type: 'input',
-            message: 'Please enter your email address: (Required)',
             name: 'email',
+            message: 'Please enter your email address: (Required)',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -41,8 +41,8 @@ Contact / Questions
         },
         {
             type: 'input',
-            message: "Please enter the link to your project's repository: (Required)",
             name: 'link',
+            message: "Please enter the link to your project's repository: (Required)",
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -54,8 +54,8 @@ Contact / Questions
         },
         {
             type: 'input',
-            message: 'Add any additional questions about the project here:',
-            name: 'questions'
+            name: 'questions',
+            message: 'Add any additional questions about the project here:'
         }
     ]);
 };
@@ -75,8 +75,8 @@ Add a New ReadMe
     return inquirer.prompt([
         {
             type: 'input',
-            message: 'What is the title of your project? (Required)',
             name: 'title',
+            message: 'What is the title of your project? (Required)',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -88,8 +88,8 @@ Add a New ReadMe
         },
         {
             type: 'input',
-            message: 'Please provide a description of your project: (Required)',
             name: 'description',
+            message: 'Please provide a description of your project: (Required)',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -101,8 +101,8 @@ Add a New ReadMe
         },
         {
            type: 'input',
-           message: 'What are the steps needed to install this project? (Required)',
            name: 'installation',
+           message: 'What are the steps needed to install this project? (Required)',
            validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -114,8 +114,8 @@ Add a New ReadMe
         },
         {
             type: 'input',
-            message: 'Provide instructions and examples on how the project works. Include screenshots if needed: (Required)',
             name: 'instructions',
+            message: 'Provide instructions and examples on how the project works. Include screenshots if needed: (Required)',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -127,8 +127,8 @@ Add a New ReadMe
         },
         {
             type: 'input',
+            name: 'credits',
             message: 'List your collaborators, if any, with their GitHub profile links: (Required)',
-            type: 'credits',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -140,28 +140,29 @@ Add a New ReadMe
         },
         {
             type: 'input',
-            message: 'Enter any outstanding features of your project here:',
-            name: 'features'
+            name: 'features',
+            message: 'Enter any outstanding features of your project here:'
         },
         {
             type: 'input',
-            message: 'If you would like other developers to contribute to this project, provide steps on how to do so here:',
-            name: 'contribute'
+            name: 'contribute',
+            message: 'If you would like other developers to contribute to this project, provide steps on how to do so here:'
         },
         {
             type: 'input',
-            message: 'If you wrote tests for your project, provide the examples on how to run them here:',
-            name: 'tests'
+            name: 'tests',
+            message: 'If you wrote tests for your project, provide the examples on how to run them here:'
         },
         {
             type: 'checkbox',
+            name: 'license',
             message: 'What licenses are involved with this project?',
-            choices: ['Choice 1', 'Choice 2', 'Choice 3', 'Choice 4', 'N/A']
+            choices: ['MIT', 'MIT2', 'Choice 3', 'Choice 4', 'N/A']
         },
         {
             type: 'confirm',
-            message: 'Would you like to create another ReadMe file?',
             name: 'confirmReadme',
+            message: 'Would you like to create another ReadMe file?',
             default: false
         }
     ])
