@@ -2,7 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-// const { writeFile } = require('./utils/generate-readme.js');
 
 // Creates an array of questions for user input
 // List of user questions
@@ -191,20 +190,4 @@ const writeFile = fileContent => { //Possibly change fileContent to something el
 // function init() {}
 
 // Function call to initialize app
-// init();
-promptUser()
-    .then(promptReadme)
-    .then(data => {
-        return generateMarkdown(data);
-    })
-    .then(writeFile => {
-        console.log(writeFile);
-        return writeFile();
-    })
-    // .then(copyFileResponse => {
-    //     console.log(copyFileResponse);
-    // })
-    // .catch(err => {
-    //     console.log(err);
-    // });
-
+init(promptReadme);
