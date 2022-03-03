@@ -24,13 +24,13 @@ function renderLicenseLink(license) {
   if (license === licenseArray[0]) {
     return '[MIT](https://opensource.org/licenses/MIT)';
   } else if (license === licenseArray[1]) {
-    return '[![MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange)](https://opensource.org/licenses/MPL-2.0)';
+    return '[MPL 2.0](https://opensource.org/licenses/MPL-2.0)';
   } else if (license === licenseArray[2]) {
-    return '[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](https://opensource.org/licenses/Apache-2.0)';
+    return '[Apache 2.0](https://opensource.org/licenses/Apache-2.0)';
   } else if (license === licenseArray[3]) {
-    return '[![EPL-2.0](https://img.shields.io/badge/License-EPL%202.0-green)](https://opensource.org/licenses/EPL-2.0)';
+    return '[EPL-2.0](https://opensource.org/licenses/EPL-2.0)';
   } else if (license === licenseArray[4]) {
-    return '[![GPL](https://img.shields.io/badge/License-GPL-blueviolet)](https://opensource.org/licenses/gpl-license)';
+    return '[GPL](https://opensource.org/licenses/gpl-license)';
   } else {
     return '';
   }
@@ -40,15 +40,15 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license === licenseArray[0]) {
-    return '[![MIT](https://img.shields.io/badge/License-MIT-brightgreen)](https://opensource.org/licenses/MIT)'
+    return '';
   } else if (license === licenseArray[1]) {
-    return '[![MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange)](https://opensource.org/licenses/MPL-2.0)'
+    return '';
   } else if (license === licenseArray[2]) {
-    return '[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](https://opensource.org/licenses/Apache-2.0)'
+    return '';
   } else if (license === licenseArray[3]) {
-    return '[![EPL-2.0](https://img.shields.io/badge/License-EPL%202.0-green)](https://opensource.org/licenses/EPL-2.0)'
+    return '';
   } else if (license === licenseArray[4]) {
-    return '[![GPL](https://img.shields.io/badge/License-GPL-blueviolet)](https://opensource.org/licenses/gpl-license)'
+    return '';
   } else {
     return '';
   }
