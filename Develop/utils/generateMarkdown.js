@@ -40,15 +40,15 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license === licenseArray[0]) {
-    return '';
+    return 'To learn more about this license, click here: ${licenseArrray[0]}';
   } else if (license === licenseArray[1]) {
-    return '';
+    return 'To learn more about this license, click here: ${licenseArrray[1]}';
   } else if (license === licenseArray[2]) {
-    return '';
+    return 'To learn more about this license, click here: ${licenseArrray[2]}';
   } else if (license === licenseArray[3]) {
-    return '';
+    return 'To learn more about this license, click here: ${licenseArrray[3]}';
   } else if (license === licenseArray[4]) {
-    return '';
+    return 'To learn more about this license, click here: ${licenseArrray[4]}';
   } else {
     return '';
   }
@@ -93,6 +93,7 @@ function generateMarkdown(data) {
   ${data.tests}
 
   ### Licenses
+  ${renderLicenseBadge(data.license)}
   ${renderLicenseSection(data.license)}
   ${renderLicenseLink(data.license)}
 
