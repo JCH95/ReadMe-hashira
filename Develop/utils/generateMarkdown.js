@@ -1,39 +1,65 @@
 // Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  // let licenseType = data.license;
-  // if (licenseType === 'MIT') {
-  //   yourLicense = `![NPM](https://img.shields.io/npm/l/express)`
-  //   // yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)`
-  //   return yourLicense;
-  // } else if (licenseType === 'MIT2') {
-  //   yourLicense = `![License: MIT2](https://img.shields.io/badge/License-MIT2-brightgreen.svg)`
-  //   return yourLicense;
-  // } else {
-  //   yourLicense = '';
-  //   return yourLicense;
-  // }
-}
+const licenseArray = ['MIT', 'MPL 2.0', 'Apache 2.0', 'EPL-2.0', 'GPL'];
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-  if (!license) {
-    return '';
+function renderLicenseBadge(license) {
+  if (license === licenseArray[0]) {
+    return '[![MIT](https://img.shields.io/badge/License-MIT-brightgreen)](https://opensource.org/licenses/MIT)';
+  } else if (license === licenseArray[1]) {
+    return '[![MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange)](https://opensource.org/licenses/MPL-2.0)';
+  } else if (license === licenseArray[2]) {
+    return '[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](https://opensource.org/licenses/Apache-2.0)';
+  } else if (license === licenseArray[3]) {
+    return '[![EPL-2.0](https://img.shields.io/badge/License-EPL%202.0-green)](https://opensource.org/licenses/EPL-2.0)';
+  } else if (license === licenseArray[4]) {
+    return '[![GPL](https://img.shields.io/badge/License-GPL-blueviolet)](https://opensource.org/licenses/gpl-license)';
   } else {
-    return `${data.license}`;
+    return '';
   }
 }
 
-// TODO: Create a function that returns the license section of README
+// Create a function that returns the license link
+// If there is no license, return an empty string
+function renderLicenseLink(license) {
+  if (license === licenseArray[0]) {
+    return '[MIT](https://opensource.org/licenses/MIT)';
+  } else if (license === licenseArray[1]) {
+    return '[![MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange)](https://opensource.org/licenses/MPL-2.0)';
+  } else if (license === licenseArray[2]) {
+    return '[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](https://opensource.org/licenses/Apache-2.0)';
+  } else if (license === licenseArray[3]) {
+    return '[![EPL-2.0](https://img.shields.io/badge/License-EPL%202.0-green)](https://opensource.org/licenses/EPL-2.0)';
+  } else if (license === licenseArray[4]) {
+    return '[![GPL](https://img.shields.io/badge/License-GPL-blueviolet)](https://opensource.org/licenses/gpl-license)';
+  } else {
+    return '';
+  }
+}
+
+// Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  
+  if (license === licenseArray[0]) {
+    return '[![MIT](https://img.shields.io/badge/License-MIT-brightgreen)](https://opensource.org/licenses/MIT)'
+  } else if (license === licenseArray[1]) {
+    return '[![MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange)](https://opensource.org/licenses/MPL-2.0)'
+  } else if (license === licenseArray[2]) {
+    return '[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](https://opensource.org/licenses/Apache-2.0)'
+  } else if (license === licenseArray[3]) {
+    return '[![EPL-2.0](https://img.shields.io/badge/License-EPL%202.0-green)](https://opensource.org/licenses/EPL-2.0)'
+  } else if (license === licenseArray[4]) {
+    return '[![GPL](https://img.shields.io/badge/License-GPL-blueviolet)](https://opensource.org/licenses/gpl-license)'
+  } else {
+    return '';
+  }
 }
 
 // Function to generate markdown for README
 function generateMarkdown(data) {
-  return `# **${data.title}**
+  return `
+  # **${data.title}**
+
+
   ## Table of Contents
   * [Description](#description)
   * [Installation](#installation)
@@ -67,7 +93,8 @@ function generateMarkdown(data) {
   ${data.tests}
 
   ### Licenses
-  ${data.license}
+  ${renderLicenseSection(data.license)}
+  ${renderLicenseLink(data.license)}
 
   ## Contact Info / Questions
   Feel free to reach out if you have any further questions regarding the project!

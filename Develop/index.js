@@ -123,15 +123,8 @@ Add a New ReadMe
         {
             type: 'input',
             name: 'credits',
-            message: 'List your collaborators, if any, with their GitHub profile links: (Required)',
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log('Please enter the collaborators, if any. If none, enter N/A.');
-                    return false;
-                }
-            }
+            message: 'List your collaborators, if any, with their GitHub profile links:',
+            default: ['N/A']
         },
         {
             type: 'input',
@@ -142,20 +135,20 @@ Add a New ReadMe
             type: 'input',
             name: 'contribute',
             message: 'If you would like other developers to contribute to this project, provide steps on how to do so here:',
-            default: ["N/A"]
+            default: ['N/A']
         },
         {
             type: 'input',
             name: 'tests',
             message: 'If you wrote tests for your project, provide the examples on how to run them here:',
-            default: ["N/A"]
+            default: ['N/A']
         },
         {
             type: 'checkbox',
             name: 'license',
             message: 'What licenses are involved with this project?',
-            choices: ['MIT', 'Mozilla', 'Apache 2.0', 'ECL 2.0'],
-            default: ["N/A"]
+            choices: ['MIT', 'MPL 2.0', 'Apache 2.0', 'EPL-2.0', 'GPL'],
+            default: ['N/A']
         },
         {
             type: 'confirm',
@@ -165,12 +158,13 @@ Add a New ReadMe
         }
     ])
     .then(readmeData => {
-        data.projects.push(readmeData);
-        if (readmeData.confirmAddProject) {
-            return promptReadme(data);
-        } else {
-            return data;
-        }
+        console.log(readmeData);
+        // data.projects.push(readmeData);
+        // if (readmeData.confirmAddProject) {
+        //     return promptReadme(data);
+        // } else {
+        //     return data;
+        // }
     });
 };
 
