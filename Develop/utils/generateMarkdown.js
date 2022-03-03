@@ -1,18 +1,18 @@
 // Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  let licenseType = license;
-  if (licenseType === 'MIT') {
-    yourLicense = `![NPM](https://img.shields.io/npm/l/express)`
-    // yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)`
-    return yourLicense;
-  } else if (licenseType === 'MIT2') {
-    yourLicense = `![License: MIT2](https://img.shields.io/badge/License-MIT2-brightgreen.svg)`
-    return yourLicense;
-  } else {
-    yourLicense = 'N/A'
-    return yourLicense;
-  }
+  // let licenseType = data.license;
+  // if (licenseType === 'MIT') {
+  //   yourLicense = `![NPM](https://img.shields.io/npm/l/express)`
+  //   // yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)`
+  //   return yourLicense;
+  // } else if (licenseType === 'MIT2') {
+  //   yourLicense = `![License: MIT2](https://img.shields.io/badge/License-MIT2-brightgreen.svg)`
+  //   return yourLicense;
+  // } else {
+  //   yourLicense = '';
+  //   return yourLicense;
+  // }
 }
 
 // TODO: Create a function that returns the license link
@@ -31,19 +31,19 @@ function renderLicenseSection(license) {
   
 }
 
-// Create a function to generate markdown for README
+// Function to generate markdown for README
 function generateMarkdown(data) {
   return `# **${data.title}**
   ## Table of Contents
-  * [Description]
-  * [Installation]
-  * [Instructions]
-  * [Credits]
-  * [Features]
-  * [Contribute]
-  * [Tests]
-  * [Licenses]
-  * [Contact/Questions]
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Instructions](#instructions)
+  * [Credits](#credits)
+  * [Features](#features)
+  * [Contribute](#contribute)
+  * [Tests](#test)
+  * [Licenses](#license)
+  * [Contact/Questions](#github)
 
   ## Description
   ${data.description}
@@ -67,14 +67,13 @@ function generateMarkdown(data) {
   ${data.tests}
 
   ### Licenses
-  ${renderLicenseBadge(license)}
+  ${data.license}
 
   ## Contact Info / Questions
+  Feel free to reach out if you have any further questions regarding the project!
   - **GitHub: ${data.github}**
   - **Email: ${data.email}**
   - **GitHub Project Link: ${data.link}**
-
-  Further Questions: ${data.questions}
   `;
 };
 
