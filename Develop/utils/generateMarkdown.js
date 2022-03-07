@@ -55,9 +55,9 @@ function renderLicenseSection(license) {
 }
 
 // Function to generate markdown for README
-function generateMarkdown(data) {
+function generateMarkdown(answers) {
   return `
-  # **${data.title}**
+  # **${answers.title}**
 
 
   ## Table of Contents
@@ -72,36 +72,36 @@ function generateMarkdown(data) {
   * [Contact/Questions](#github)
 
   ## Description
-  ${data.description}
+  ${answers.description}
 
   ## Installation
-  ${data.installation}
+  ${answers.installation}
 
   ## Instructions
-  ${data.instructions}
+  ${answers.instructions}
 
   ## Credits/Collaborators
-  ${data.credits}
+  ${answers.credits}
 
   ### Features
-  ${data.features}
+  ${answers.features}
 
   ### Contributions
-  ${data.contribute}
+  ${answers.contribute}
 
   ### Tests
-  ${data.tests}
+  ${answers.tests}
 
   ### Licenses
-  ${renderLicenseBadge(data.license)}
-  ${renderLicenseSection(data.license)}
-  ${renderLicenseLink(data.license)}
+  ${renderLicenseBadge(answers.license)}
+  ${renderLicenseSection(answers.license)}
+  ${renderLicenseLink(answers.license)}
 
   ## Contact Info / Questions
   Feel free to reach out if you have any further questions regarding the project!
-  - **GitHub: ${data.github}**
-  - **Email: ${data.email}**
-  - **GitHub Project Link: ${data.link}**
+  - **GitHub: ${answers.github}**
+  - **Email: ${answers.email}**
+  - **GitHub Project Link: ${answers.link}**
   `;
 };
 
