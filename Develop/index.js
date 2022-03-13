@@ -144,30 +144,30 @@ Add a New ReadMe
         console.log(answers);
         generateMarkdown(answers);
         console.log(generateMarkdown(answers));
+        writeToFile(answers);
         // data.push(readmeData);
         // if (readmeData.confirmAddProject) {
-        //     return promptReadme(data);
+        //     return promptReadme();
         // } else {
         //     return data;
         // }
     });
 };
 
+// ${fileName.toLowerCase.split(' ').join('')}
 // Create a function to write README file
-const writeFile = fileContent => { //Possibly change fileContent to something else, or change data below to fileContent
-    return new Promise((resolve, reject) => {
-        fs.writeFile(`./${fileName.toLowerCase.split(' ').join('')}.md`, fileContent, err => {
-            // If Error, reject Promise and sent error info to .catch method
-            if (err) {
-                reject(err);
-                // Return to make sure the Promise doesn't run resolve function
-                return
-            }
-            // Resolve if everything worked and send data to .then method
-            resolve({
-                ok: true,
-                message: 'ReadME file created!'
-            });
+function writeToFile(data) { //Possibly change fileContent to something else, or change data below to fileContent
+    fs.writeFile('./dist/README.md', data, err => {
+        // If Error, reject Promise and sent error info to .catch method
+        if (err) {
+            reject(err);
+            // Return to make sure the Promise doesn't run resolve function
+            return
+        }
+        // Resolve if everything worked and send data to .then method
+        resolve({
+            ok: true,
+            message: 'ReadME file created!'
         });
     });
 };
