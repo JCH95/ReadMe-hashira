@@ -1,5 +1,5 @@
 
-  # greatgre
+  # Project
 
 
   ## Table of Contents
@@ -14,25 +14,25 @@
   * [Contact/Questions](#github)
 
   ## Description
-  gerag
+  It is a project that does project things.
 
   ## Installation
-  reag
+  install, then click run
 
   ## Instructions
-  reagraega
+  It works like any other project.
 
   ## Credits/Collaborators
-  ggr
+  N/A
 
   ### Features
-  egrea
+  It's a nice project
 
   ### Contributions
-  greg
+  N/A
 
   ### Tests
-  reagg
+  N/A
 
   ### Licenses
   
@@ -41,7 +41,7 @@
 
   ## Contact Info / Questions
   Feel free to reach out if you have any further questions regarding the project!
-  - GitHub: ghreg
-  - Email: grgh
-  - GitHub Project Link: regher
+  - GitHub: GITHUB DUDE
+  - Email: github@github
+  - GitHub Project Link: github.com
   
