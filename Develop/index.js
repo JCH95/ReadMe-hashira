@@ -157,7 +157,7 @@ Add a New ReadMe
 // ${fileName.toLowerCase.split(' ').join('')}
 // Create a function to write README file
 function writeToFile(data) { //Possibly change fileContent to something else, or change data below to fileContent
-    fs.writeFile('./dist/README.md', data, err => {
+    fs.writeFile('./dist/README.md', `${generateMarkdown(data)}`, err => {
         // If Error, reject Promise and sent error info to .catch method
         if (err) {
             reject(err);
@@ -165,10 +165,10 @@ function writeToFile(data) { //Possibly change fileContent to something else, or
             return
         }
         // Resolve if everything worked and send data to .then method
-        resolve({
-            ok: true,
-            message: 'ReadME file created!'
-        });
+        // resolve({
+        //     ok: true,
+        //     message: 'ReadME file created!'
+        // });
     });
 };
 

@@ -57,7 +57,7 @@ function renderLicenseSection(license) {
 // Function to generate markdown for README
 function generateMarkdown(answers) {
   return `
-  # **${answers.title}**
+  # ${answers.title}
 
 
   ## Table of Contents
@@ -99,9 +99,9 @@ function generateMarkdown(answers) {
 
   ## Contact Info / Questions
   Feel free to reach out if you have any further questions regarding the project!
-  - **GitHub: ${answers.github}**
-  - **Email: ${answers.email}**
-  - **GitHub Project Link: ${answers.link}**
+  - GitHub: ${answers.github}
+  - Email: ${answers.email}
+  - GitHub Project Link: ${answers.link}
   `;
 };
 
