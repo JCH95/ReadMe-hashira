@@ -3,15 +3,15 @@
 const licenseArray = ['MIT', 'MPL 2.0', 'Apache 2.0', 'EPL-2.0', 'GPL'];
 
 function renderLicenseBadge(license) {
-  if (license === licenseArray[0]) {
+  if (license == licenseArray[0]) {
     return '[![MIT](https://img.shields.io/badge/License-MIT-brightgreen)](https://opensource.org/licenses/MIT)';
-  } else if (license === licenseArray[1]) {
+  } else if (license == licenseArray[1]) {
     return '[![MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-orange)](https://opensource.org/licenses/MPL-2.0)';
-  } else if (license === licenseArray[2]) {
+  } else if (license == licenseArray[2]) {
     return '[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](https://opensource.org/licenses/Apache-2.0)';
-  } else if (license === licenseArray[3]) {
+  } else if (license == licenseArray[3]) {
     return '[![EPL-2.0](https://img.shields.io/badge/License-EPL%202.0-green)](https://opensource.org/licenses/EPL-2.0)';
-  } else if (license === licenseArray[4]) {
+  } else if (license == licenseArray[4]) {
     return '[![GPL](https://img.shields.io/badge/License-GPL-blueviolet)](https://opensource.org/licenses/gpl-license)';
   } else {
     return '';
@@ -21,15 +21,15 @@ function renderLicenseBadge(license) {
 // Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license === licenseArray[0]) {
+  if (license == licenseArray[0]) {
     return '[MIT](https://opensource.org/licenses/MIT)';
-  } else if (license === licenseArray[1]) {
+  } else if (license == licenseArray[1]) {
     return '[MPL 2.0](https://opensource.org/licenses/MPL-2.0)';
-  } else if (license === licenseArray[2]) {
+  } else if (license == licenseArray[2]) {
     return '[Apache 2.0](https://opensource.org/licenses/Apache-2.0)';
-  } else if (license === licenseArray[3]) {
+  } else if (license == licenseArray[3]) {
     return '[EPL-2.0](https://opensource.org/licenses/EPL-2.0)';
-  } else if (license === licenseArray[4]) {
+  } else if (license == licenseArray[4]) {
     return '[GPL](https://opensource.org/licenses/gpl-license)';
   } else {
     return '';
@@ -39,16 +39,16 @@ function renderLicenseLink(license) {
 // Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license === licenseArray[0]) {
-    return 'To learn more about this license, click here: ${licenseArrray[0]}';
-  } else if (license === licenseArray[1]) {
-    return 'To learn more about this license, click here: ${licenseArrray[1]}';
-  } else if (license === licenseArray[2]) {
-    return 'To learn more about this license, click here: ${licenseArrray[2]}';
-  } else if (license === licenseArray[3]) {
-    return 'To learn more about this license, click here: ${licenseArrray[3]}';
-  } else if (license === licenseArray[4]) {
-    return 'To learn more about this license, click here: ${licenseArrray[4]}';
+  if (license == licenseArray[0]) {
+    return `To learn more about this license, click here: ${licenseArray[0]}`;
+  } else if (license == licenseArray[1]) {
+    return `To learn more about this license, click here: ${licenseArray[1]}`;
+  } else if (license == licenseArray[2]) {
+    return `To learn more about this license, click here: ${licenseArray[2]}`;
+  } else if (license == licenseArray[3]) {
+    return `To learn more about this license, click here: ${licenseArray[3]}`;
+  } else if (license == licenseArray[4]) {
+    return `To learn more about this license, click here: ${licenseArray[4]}`;
   } else {
     return '';
   }
@@ -56,6 +56,9 @@ function renderLicenseSection(license) {
 
 // Function to generate markdown for README
 function generateMarkdown(answers) {
+  let licenseBadge = renderLicenseBadge(answers.license);
+  let licenseLink = renderLicenseSection(answers.license);
+  let licenseSection = renderLicenseLink(answers.license);
   return `
   # ${answers.title}
 
@@ -93,9 +96,9 @@ function generateMarkdown(answers) {
   ${answers.tests}
 
   ### Licenses
-  ${renderLicenseBadge(answers.license)}
-  ${renderLicenseSection(answers.license)}
-  ${renderLicenseLink(answers.license)}
+  ${licenseBadge}
+  ${licenseLink}
+  ${licenseSection}
 
   ## Contact Info / Questions
   Feel free to reach out if you have any further questions regarding the project!

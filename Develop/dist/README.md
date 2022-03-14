@@ -1,5 +1,5 @@
 
-  # Project
+  # gfd
 
 
   ## Table of Contents
@@ -14,34 +14,34 @@
   * [Contact/Questions](#github)
 
   ## Description
-  It is a project that does project things.
+  gfd
 
   ## Installation
-  install, then click run
+  gfd
 
   ## Instructions
-  It works like any other project.
+  gfd
 
   ## Credits/Collaborators
-  N/A
+  gfd
 
   ### Features
-  It's a nice project
+  gfd
 
   ### Contributions
-  N/A
+  gfd
 
   ### Tests
-  N/A
+  gfd
 
   ### Licenses
-  
-  
-  
+  [![MIT](https://img.shields.io/badge/License-MIT-brightgreen)](https://opensource.org/licenses/MIT)
+  To learn more about this license, click here: MIT
+  [MIT](https://opensource.org/licenses/MIT)
 
   ## Contact Info / Questions
   Feel free to reach out if you have any further questions regarding the project!
-  - GitHub: GITHUB DUDE
-  - Email: github@github
-  - GitHub Project Link: github.com
+  - GitHub: gfds
+  - Email: gfd
+  - GitHub Project Link: gfds
   
