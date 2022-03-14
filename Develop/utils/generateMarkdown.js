@@ -69,8 +69,8 @@ function generateMarkdown(answers) {
   * [Instructions](#instructions)
   * [Credits](#credits)
   * [Features](#features)
-  * [Contribute](#contribute)
-  * [Tests](#test)
+  * [Contributions](#contribute)
+  * [Tests](#tests)
   * [Licenses](#license)
   * [Contact/Questions](#github)
 
