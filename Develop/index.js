@@ -145,16 +145,9 @@ Add a New ReadMe
         generateMarkdown(answers);
         console.log(generateMarkdown(answers));
         writeToFile(answers);
-        // data.push(readmeData);
-        // if (readmeData.confirmAddProject) {
-        //     return promptReadme();
-        // } else {
-        //     return data;
-        // }
     });
 };
 
-// ${fileName.toLowerCase.split(' ').join('')}
 // Create a function to write README file
 function writeToFile(data) { //Possibly change fileContent to something else, or change data below to fileContent
     fs.writeFile('./dist/README.md', `${generateMarkdown(data)}`, err => {
@@ -164,11 +157,6 @@ function writeToFile(data) { //Possibly change fileContent to something else, or
             // Return to make sure the Promise doesn't run resolve function
             return
         }
-        // Resolve if everything worked and send data to .then method
-        // resolve({
-        //     ok: true,
-        //     message: 'ReadME file created!'
-        // });
     });
 };
 
