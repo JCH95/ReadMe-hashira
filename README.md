@@ -10,3 +10,4 @@ to all questions is generated in a DIST folder.
 ![image](https://user-images.githubusercontent.com/94874020/158089190-e3d5a638-f422-48c1-aa9f-a6602f531643.png)
 
 ## Video of the README generator running
+https://drive.google.com/file/d/1R9rthPpWjad-X3DNxx9bXqLJbleZiqKp/view
