@@ -1,5 +1,5 @@
 
-  # g
+  # The ReadMe Project
 
 
   ## Table of Contents
@@ -14,34 +14,34 @@
   * [Contact/Questions](#github)
 
   ## Description
-  g
+  This project generates a readme through the command line.
 
   ## Installation
-  g
+  Install files, run in vscode.
 
   ## Instructions
-  g
+  Answer questions in the command line, it does the rest.
 
   ## Credits/Collaborators
-  g
+  N/A
 
   ### Features
-  g
+  None.
 
   ### Contributions
-  g
+  N/A
 
   ### Tests
   N/A
 
   ### Licenses
-  [![MIT](https://img.shields.io/badge/License-MIT-brightgreen)](https://opensource.org/licenses/MIT)
-  To learn more about this license, click here: MIT
-  [MIT](https://opensource.org/licenses/MIT)
+  [![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](https://opensource.org/licenses/Apache-2.0)
+  To learn more about this license, click here: Apache 2.0
+  [Apache 2.0](https://opensource.org/licenses/Apache-2.0)
 
   ## Contact Info / Questions
   Feel free to reach out if you have any further questions regarding the project!
-  - GitHub: g
-  - Email: g
-  - GitHub Project Link: g
+  - GitHub: User.github
+  - Email: user@github
+  - GitHub Project Link: project.github
   
